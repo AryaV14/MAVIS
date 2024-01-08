@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mavis',
       
-      // theme: ThemeData.dark(useMaterial3: true),
-      theme: ThemeData.dark(useMaterial3: true).copyWith(
-        scaffoldBackgroundColor: Pallete.blackColor,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Pallete.blackColor
-          ),
-      ),
+      theme: ThemeData.dark(useMaterial3: true),
+      // theme: ThemeData.dark(useMaterial3: true).copyWith(
+      //   scaffoldBackgroundColor: Pallete.blackColor,
+      //   appBarTheme: const AppBarTheme(
+      //     backgroundColor: Pallete.blackColor
+      //     ),
+      // ),
       home: const HomePage(),
     );
   }
