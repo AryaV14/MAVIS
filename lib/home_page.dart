@@ -1,3 +1,4 @@
+import 'package:mavis/feature_box.dart';
 import 'package:mavis/pallete.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                 vertical: 10,
               ),
               margin:const EdgeInsets.symmetric(horizontal: 40).copyWith(
-                top: 30,
+                top: 10,
               ),
               decoration: BoxDecoration(
                 border: Border.all(
@@ -91,19 +92,40 @@ class _HomePageState extends State<HomePage> {
                   color: Pallete.whiteColor,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                )
+                ),
               ),
             ),
 
             //features list
             Column(
-              children: [
+              children: const [
+                FeatureBox(
+                  color: Pallete.firstSuggestionBoxColor,
+                  HeaderText: 'ChatGPT',
+                  Description: 'A smarter way to stay organized and informed with ChatGPT',
+                  ),
 
+                  FeatureBox(
+                  color: Pallete.secondSuggestionBoxColor,
+                  HeaderText: 'Dall-E',
+                  Description: 'Get inspired and stay creative with your personal assistant powered by Dall-E',
+                  ),
+
+                  FeatureBox(
+                  color: Pallete.thirdSuggestionBoxColor,
+                  HeaderText: 'Smart Voice Assistant',
+                  Description: 'Get the best of both worlds with a voice assistant powered by Dall-E and ChatGPT',
+                  ),
               ],
-            )
+            ),
             
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Pallete.firstSuggestionBoxColor,
+          onPressed: () {},
+          child: const Icon(Icons.mic,color: Pallete.blackColor,),
+          ),
       );
   }
 }
