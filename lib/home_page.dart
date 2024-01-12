@@ -77,9 +77,30 @@ class _HomePageState extends State<HomePage> {
                 ),
              ),
             ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(
+                left: 40,
+                top: 10,
+              ),
+              child: const Text(
+                'Here are a few features',
+                style: TextStyle(
+                  fontFamily: 'Cera Pro',
+                  color: Pallete.whiteColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                )
+              ),
+            ),
 
-            //suggestions list
+            //features list
+            Column(
+              children: [
 
+              ],
+            )
             
           ],
         ),
