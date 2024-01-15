@@ -23,14 +23,32 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> initSpeechToText() async {
+    try {
     await speechToText.initialize();
+    print('SpeechToText initialized.');
+  } catch (e) {
+    print('SpeechToText initialization failed: $e');
+  }
     setState(() {});
   }
 
   Future<void> startListening() async {
-    await speechToText.listen(onResult: onSpeechResult);
-    setState(() {});
+  try {
+    await speechToText.listen(onResult: onSpeechResult, localeId: '',);
+  } catch (e) {
+    print('Error starting speech recognition: $e');
   }
+  setState(() {});
+}
+
+  // Future<void> startListening() async {
+
+  //   await speechToText.listen(
+  //   onResult: onSpeechResult,
+  //   localeId: '',
+  // );
+  //   setState(() {});
+  // }
 
   Future<void> stopListening() async {
     await speechToText.stop();
@@ -165,10 +183,13 @@ class _HomePageState extends State<HomePage> {
         onPressed: () async {
           if (await speechToText.hasPermission && speechToText.isNotListening) {
             await startListening();
+
           } else if (speechToText.isListening) {
             await stopListening();
           } else {
             initSpeechToText();
+        //   }else {
+        //     print("The user has denied the use of speech recognition.");
          }
         },
         child: const Icon(
